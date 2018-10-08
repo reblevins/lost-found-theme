@@ -1,0 +1,62 @@
+/*
+ Theme Name:   Lost&Found
+ Theme URI:    https://www.lostfound.org
+ Description:  Lost&Found Theme
+ Author:       Rodney Blevins
+ Author URI:   http://www.blevins.nl
+ Template:     twentyseventeen
+ Version:      0.0.1
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  lost-found
+ Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
+ GitHub Theme URI: holger1411/understrap-child
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Roboto:400,400i,700');
+
+$bodyFontColor: #4A4A4A;
+$primaryColor: #2eb2ff;
+$headerFont: 'Merriweather', serif;
+$bodyFont: 'Roboto', sans-serif;
+
+body {
+	font-family: $bodyFont;
+	color: $bodyFontColor;
+	background: #f4f4f4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $headerFont;
+
+	div { font-size: inherit; font-family: inherit; display: inline-block; }
+}
+
+.site-title {
+    margin: 0;
+    line-height: 4rem;
+    font-size: 4.4rem;
+    text-transform: capitalize;
+
+    .header-lost {
+	    color: $primaryColor;
+	}
+	.header-amp {
+	    margin-left: -20px;
+	}
+    .header-found {
+	    transform: rotate(180deg);
+	    display: block;
+	}
+
+	span {
+		color: $primaryColor;
+		font-family: inherit;
+	}
+}
+
+body.has-header-image .site-description {
+    margin: 0.8rem 0.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}

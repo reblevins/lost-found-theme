@@ -12,3 +12,45 @@
  Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
  GitHub Theme URI: holger1411/understrap-child
 */
+@import url("https://fonts.googleapis.com/css?family=Merriweather|Roboto:400,400i,700");
+body {
+  font-family: "Roboto", sans-serif;
+  color: #4A4A4A;
+  background: #f4f4f4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Merriweather", serif;
+}
+h1 div, h2 div, h3 div, h4 div, h5 div, h6 div {
+  font-size: inherit;
+  font-family: inherit;
+  display: inline-block;
+}
+
+.site-title {
+  margin: 0;
+  line-height: 4rem;
+  font-size: 4.4rem;
+  text-transform: capitalize;
+}
+.site-title .header-lost {
+  color: #2eb2ff;
+}
+.site-title .header-amp {
+  margin-left: -20px;
+}
+.site-title .header-found {
+  transform: rotate(180deg);
+  display: block;
+}
+.site-title span {
+  color: #2eb2ff;
+  font-family: inherit;
+}
+
+body.has-header-image .site-description {
+  margin: 0.8rem 0.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
