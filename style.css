@@ -49,6 +49,10 @@ h1 div, h2 div, h3 div, h4 div, h5 div, h6 div {
   font-family: inherit;
 }
 
+.site-branding a:hover, .site-branding a:focus {
+  opacity: 1 !important;
+}
+
 body.has-header-image .site-description {
   margin: 0.8rem 0.5rem;
   font-size: 1.5rem;
