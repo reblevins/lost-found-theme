@@ -32,26 +32,53 @@ h1, h2, h3, h4, h5, h6 {
 	div { font-size: inherit; font-family: inherit; display: inline-block; }
 }
 
-.site-title {
-    margin: 0;
-    line-height: 4rem;
-    font-size: 4.4rem;
-    text-transform: capitalize;
+// .site-header {
+//     margin: 0;
+//     line-height: 5rem;
+//     font-size: 6rem;
 
-    .header-lost {
-	    color: $primaryColor;
-	}
-	.header-amp {
-	    margin-left: -20px;
-	}
-    .header-found {
-	    transform: rotate(180deg);
-	    display: block;
-	}
+//     .header-lost {
+// 	    color: $primaryColor;
+// 	}
+// 	.header-amp {
+// 	    margin-left: -20px;
+// 	}
+//     .header-found {
+// 	    transform: rotate(180deg);
+// 	    display: block;
+// 	}
 
-	span {
-		color: $primaryColor;
-		font-family: inherit;
+// 	span {
+// 		color: $primaryColor;
+// 		font-family: inherit;
+// 	}
+// }
+
+.site-header {
+	background-color: #fafafa;
+	position: relative;
+
+	h1 {
+	    margin: 0;
+	    line-height: 5rem;
+	    text-transform: capitalize;
+	    font-size: 6rem;
+
+	    .header-lost {
+		    color: $primaryColor;
+		}
+		.header-amp {
+		    margin-left: -20px;
+		}
+
+	    & div.header-found {
+		    transform: rotate(180deg);
+
+		    span {
+		    	color: $primaryColor;
+				font-family: inherit;
+		    }
+		}
 	}
 }
 
@@ -65,18 +92,29 @@ body.has-header-image .site-description {
     text-align: center;
 }
 
-body.home {
+@media screen and (min-width: 48em) {
 	header.page-header {
 	    display: none;
 	}
-	.blog:not(.has-sidebar) #primary article {
+	.blog:not(.has-sidebar) #primary article,
+	.archive:not(.page-one-column):not(.has-sidebar) #primary article,
+	.search:not(.has-sidebar) #primary article,
+	.error404:not(.has-sidebar) #primary .page-content,
+	.error404.has-sidebar #primary .page-content,
+	body.page-two-column:not(.archive) #primary .entry-content,
+	body.page-two-column #comments {
 		float: none;
 	    width: initial;
 	    display: grid;
 	    justify-items: left;
 	    text-align: left;
-	    grid-template-columns: 1fr 2fr;
+	    grid-template-columns: 33% 66%;
+	    grid-gap: 2em;
 	}
+}
+
+body.home {
+
 
 	.post-thumbnail {
 	    grid-row: 1;
@@ -88,10 +126,12 @@ body.home {
 	    grid-column: 1;
 	    grid-row: 2 / 3;
 	    border-right: 1px solid #bbb;
-	    padding-right: 2rem;
+	    padding-right: 2.5rem;
+	    margin: 0;
 	}
 
 	.entry-content {
 	    grid-row: 2;
+	    line-height: 2em;
 	}
 }

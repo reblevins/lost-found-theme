@@ -28,23 +28,26 @@ h1 div, h2 div, h3 div, h4 div, h5 div, h6 div {
   display: inline-block;
 }
 
-.site-title {
-  margin: 0;
-  line-height: 4rem;
-  font-size: 4.4rem;
-  text-transform: capitalize;
+.site-header {
+  background-color: #fafafa;
+  position: relative;
 }
-.site-title .header-lost {
+.site-header h1 {
+  margin: 0;
+  line-height: 5rem;
+  text-transform: capitalize;
+  font-size: 6rem;
+}
+.site-header h1 .header-lost {
   color: #2eb2ff;
 }
-.site-title .header-amp {
+.site-header h1 .header-amp {
   margin-left: -20px;
 }
-.site-title .header-found {
+.site-header h1 div.header-found {
   transform: rotate(180deg);
-  display: block;
 }
-.site-title span {
+.site-header h1 div.header-found span {
   color: #2eb2ff;
   font-family: inherit;
 }
@@ -59,16 +62,26 @@ body.has-header-image .site-description {
   text-align: center;
 }
 
-body.home header.page-header {
-  display: none;
-}
-body.home .blog:not(.has-sidebar) #primary article {
-  float: none;
-  width: initial;
-  display: grid;
-  justify-items: left;
-  text-align: left;
-  grid-template-columns: 1fr 2fr;
+@media screen and (min-width: 48em) {
+  header.page-header {
+    display: none;
+  }
+
+  .blog:not(.has-sidebar) #primary article,
+.archive:not(.page-one-column):not(.has-sidebar) #primary article,
+.search:not(.has-sidebar) #primary article,
+.error404:not(.has-sidebar) #primary .page-content,
+.error404.has-sidebar #primary .page-content,
+body.page-two-column:not(.archive) #primary .entry-content,
+body.page-two-column #comments {
+    float: none;
+    width: initial;
+    display: grid;
+    justify-items: left;
+    text-align: left;
+    grid-template-columns: 33% 66%;
+    grid-gap: 2em;
+  }
 }
 body.home .post-thumbnail {
   grid-row: 1;
@@ -79,8 +92,10 @@ body.home .entry-header {
   grid-column: 1;
   grid-row: 2/3;
   border-right: 1px solid #bbb;
-  padding-right: 2rem;
+  padding-right: 2.5rem;
+  margin: 0;
 }
 body.home .entry-content {
   grid-row: 2;
+  line-height: 2em;
 }
