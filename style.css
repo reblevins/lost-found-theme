@@ -32,6 +32,9 @@ h1 div, h2 div, h3 div, h4 div, h5 div, h6 div {
   background-color: #fafafa;
   position: relative;
 }
+.site-header .site-branding-text {
+  max-width: 350px;
+}
 .site-header h1 {
   margin: 0;
   line-height: 5rem;
