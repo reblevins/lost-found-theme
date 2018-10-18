@@ -15,19 +15,19 @@
 		<?php the_custom_logo(); ?>
 
 		<div class="site-branding-text">
-			<?php if ( is_front_page() ) : ?>
+			<?php // if ( is_front_page() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<div class="header-lost">Lost</div>
 					<div class="header-amp">&amp;</div>
 					<div class="header-found">F<span>o</span>und</div>
 				</a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<?php // else : ?>
+				<!-- <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<div class="header-lost">Lost</div>
 					<div class="header-amp">&amp;</div>
 					<div class="header-found">F<span>o</span>und</div>
-				</a></p>
-			<?php endif; ?>
+				</a></p> -->
+			<?php // endif; ?>
 
 			<?php
 			$description = get_bloginfo( 'description', 'display' );

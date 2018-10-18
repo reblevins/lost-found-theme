@@ -17,6 +17,7 @@
 
 $bodyFontColor: #4A4A4A;
 $primaryColor: #2eb2ff;
+$lightGray: #BBB;
 $headerFont: 'Merriweather', serif;
 $bodyFont: 'Roboto', sans-serif;
 
@@ -54,6 +55,10 @@ h1, h2, h3, h4, h5, h6 {
 // 	}
 // }
 
+header.page-header {
+    display: none;
+}
+
 .site-header {
 	background-color: #fafafa;
 	position: relative;
@@ -75,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 		    margin-left: -20px;
 		}
 
-	    & div.header-found {
+	    .header-found {
 		    transform: rotate(180deg);
 
 		    span {
@@ -96,17 +101,30 @@ body.has-header-image .site-description {
     text-align: center;
 }
 
-@media screen and (min-width: 48em) {
-	header.page-header {
-	    display: none;
+.blog {
+	.site-main {
+		& > article {
+		    display: grid;
+		    justify-items: left;
+		    text-align: left;
+		    grid-gap: 1em;
+
+		    header.entry-header {
+		    	margin: 0;
+		    	padding: 0 1em 0 0;
+		    	border-bottom: 1px solid $lightGray;
+		    	width: 100%;
+		    }
+
+		    .post-thumbnail {
+		    	grid-row: 1;
+		    }
+		}
 	}
-	.blog:not(.has-sidebar) #primary article,
-	.archive:not(.page-one-column):not(.has-sidebar) #primary article,
-	.search:not(.has-sidebar) #primary article,
-	.error404:not(.has-sidebar) #primary .page-content,
-	.error404.has-sidebar #primary .page-content,
-	body.page-two-column:not(.archive) #primary .entry-content,
-	body.page-two-column #comments {
+}
+
+@media screen and (min-width: 48em) {
+	.blog:not(.has-sidebar) #primary article, .archive:not(.page-one-column):not(.has-sidebar) #primary article, .search:not(.has-sidebar) #primary article, .error404:not(.has-sidebar) #primary .page-content, .error404.has-sidebar #primary .page-content, body.page-two-column:not(.archive) #primary .entry-content, body.page-two-column #comments {
 		float: none;
 	    width: initial;
 	    display: grid;
@@ -115,27 +133,26 @@ body.has-header-image .site-description {
 	    grid-template-columns: 33% 66%;
 	    grid-gap: 2em;
 	}
-}
 
-body.home {
+	body.home {
+		.post-thumbnail {
+		    grid-row: 1;
+		    grid-column: 1 / 3;
+		}
 
+		.entry-header {
+		    padding-top: 0;
+		    grid-column: 1;
+		    grid-row: 2 / 3;
+		    border-right: 1px solid $lightGray;
+		    border-bottom: none !important;
+		    padding-right: 2.5rem;
+		    margin: 0;
+		}
 
-	.post-thumbnail {
-	    grid-row: 1;
-	    grid-column: 1 / 3;
-	}
-
-	.entry-header {
-	    padding-top: 0;
-	    grid-column: 1;
-	    grid-row: 2 / 3;
-	    border-right: 1px solid #bbb;
-	    padding-right: 2.5rem;
-	    margin: 0;
-	}
-
-	.entry-content {
-	    grid-row: 2;
-	    line-height: 2em;
+		.entry-content {
+		    grid-row: 2;
+		    line-height: 2em;
+		}
 	}
 }
